@@ -1,0 +1,8 @@
+<tr>
+    <td>{{nome}}</td>
+    <td>{{imposto}}%</td>
+    <td>
+        
+        <input class="form-check-input" type="checkbox" onclick="window.location.href= this.checked ? '/produto/{{produtoId}}/vinculartipo/{{tipoId}}' : '/produto/{{produtoId}}/desvinculartipo/{{tipoId}}'" {{vinculado}}>
+    </td>
+</tr>

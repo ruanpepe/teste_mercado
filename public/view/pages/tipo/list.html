@@ -1,0 +1,22 @@
+<form method="POST" action="/tipo">
+  <label for="nome">Nome</label>
+  <input type="text" class="form-control" name="nome" autofocus required />
+  <br />
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="reset" class="btn btn-danger">Cancelar</button>
+  </div>
+</form>
+<hr />
+<h5>Tipos cadastrados</h5>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{itens}}
+  </tbody>
+</table>

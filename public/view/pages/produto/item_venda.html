@@ -1,0 +1,17 @@
+<tr>
+    <td>
+        <label>{{nome}}</label>
+        <input name="nome_produto[{{id}}]" value="{{nome}}" type="hidden">
+    </td>
+    <td>
+        <label>{{preco}}</label>
+        <input name="valor_produto[{{id}}]" id="preco{{id}}" value="{{preco}}" type="hidden">
+    </td>
+    <td>
+        <label>{{imposto}}</label>
+        <input name="imposto_produto[{{id}}]" id="imposto{{id}}" value="{{imposto}}" type="hidden">
+    </td>
+    <td><input name="quantidade_produto[{{id}}]" type="number" id="quantidade{{id}}" onchange="atualizaTotal({{id}})"></td>
+    <td><input id="total{{id}}" disabled></label></td>
+    <td><input id="totalImpostos{{id}}" disabled></label></td>
+</tr>

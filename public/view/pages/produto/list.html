@@ -1,0 +1,25 @@
+<form method="POST" action="/produto">
+  <label for="nome">Nome</label>
+  <input type="text" class="form-control" name="nome" autofocus required />
+  <label for="nome">Preço</label>
+  <input type="text" class="form-control" name="preco" autofocus required />
+  <br />
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="reset" class="btn btn-danger">Cancelar</button>
+  </div>
+</form>
+<hr />
+<h5>Produtos cadastrados</h5>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{itens}}
+  </tbody>
+</table>

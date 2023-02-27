@@ -1,0 +1,46 @@
+<form method="POST" action="/tipo/atualizar">
+  <input type="hidden" name="id" value="{{id}}" />
+
+  <label for="nome">Nome</label>
+  <input type="text" class="form-control" name="nome" value="{{nome}}" autofocus required />
+
+  <br />
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="/tipo" class="btn btn-danger">Cancelar</a>
+  </div>
+</form>
+<hr />
+
+<div class="container">
+  <h5>Novo imposto</h5>
+  
+  <form method="POST" action="/imposto">
+    <input type="hidden" name="tipo_id" value="{{id}}" />
+
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="imposto_nome" autofocus required />
+
+    <label for="nome">Percentual</label>
+    <input type="text" class="form-control" name="imposto_percentual" autofocus required />
+
+    <br />
+    <div>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="reset" class="btn btn-danger">Cancelar</button>
+    </div>
+  </form>
+  
+  <h5>Impostos cadastrados</h5>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Percentual</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{linhasDeImpostos}}
+    </tbody>
+  </table>
+</div>

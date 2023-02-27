@@ -1,0 +1,53 @@
+<form method="POST" action="/venda">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Imposto (%)</th>
+      <th>Quantidade</th>
+      <th>Total</th>
+      <th>Total + impostos</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{linhasDeProdutos}}
+  </tbody>
+</table>
+<h5>TOTAL: <label id="total"></label></h5>
+<h5>TOTAL FINAL: <label id="totalImpostos"></label></h5>
+<div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</div>
+</form>
+
+<script>
+  total=[];
+  totalImpostos=[];
+  function atualizaTotal(produtoId){
+      elTotal = document.getElementById('total'+produtoId);
+      elTotalImpostos = document.getElementById('totalImpostos'+produtoId);
+      elSomaTotal = document.getElementById('total');
+      elSomaTotalImpostos = document.getElementById('totalImpostos');
+      
+      preco = Number(document.getElementById('preco'+produtoId).value);
+      imposto = Number(document.getElementById('imposto'+produtoId).value);
+      quantidade = Number(document.getElementById('quantidade'+produtoId).value);
+      
+
+      total[produtoId] = (preco*quantidade);
+      totalImpostos[produtoId] = (preco*quantidade) + (imposto/100*(preco*quantidade));
+      elTotal.value = total[produtoId];
+      elTotalImpostos.value = totalImpostos[produtoId];
+
+      somaTotal = total.reduce(function(somaTotal, total){
+        return somaTotal + total;
+      }, 0);
+      elSomaTotal.innerHTML = somaTotal;
+
+      somaTotalImpostos = totalImpostos.reduce(function(somaTotalImpostos, totalImpostos){
+        return somaTotalImpostos + totalImpostos;
+      }, 0);
+      elSomaTotalImpostos.innerHTML = somaTotalImpostos;
+  }
+</script>
